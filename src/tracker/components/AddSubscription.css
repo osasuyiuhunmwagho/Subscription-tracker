@@ -1,0 +1,92 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1040;
+}
+
+.modal-backdrop.show {
+  opacity: 10;
+  visibility: visible;
+}
+
+.subscription-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -60%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.subscription-modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+.subscription-modal .d-flex {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;  /* creates space between buttons */
+
+}
+
+.subscription-modal .btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+
+.subscription-modal .btn-secondary:hover {
+  background-color: #2c5282;
+}
+
+.subscription-modal .modal-title {
+  font-weight: 600;
+  color: #242424;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.subscription-modal .btn-primary {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #198867;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.subscription-modal .btn-primary:hover {
+  background-color: #2c5282;
+}
+
+.subscription-modal .form-label {
+  font-weight: 500;
+  color: #242424;
+  margin-bottom: 1.5 rem;
+}
+
+
+
