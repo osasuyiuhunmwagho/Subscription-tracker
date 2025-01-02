@@ -1,10 +1,8 @@
-.container{
-    background-color: #f8f9fa !important; /* Light gray background */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Shadow */
-    padding: 30px; /* Padding */
-    width: 350px;
-}
+.container { width: 300px; /* Adjust the width to make it bigger */ 
+    padding: 30px; /* Add padding for content */
+     border-radius: 20px; /* Adds rounded corners */ 
+     background-color: #ffffff; /* White box */
+     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */ }
 .custom-button {
     background-color: #198867 ; 
     width: 300px;
@@ -34,4 +32,13 @@ h2{
     color: #333;                 /* Darker text color */
     background-color: #f8f9fa;   /* Light grey background */
     transition: all 0.3s ease;   /* Smooth transition for hover/focus */
+}
+.password-hint { position: relative; 
+    top: 0; color: #000; margin-top: -20px; padding-bottom: 20px;
+}
+.mission { 
+    color: white; background-color: black; position: absolute; top: 0; right: 0; 
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em
 }

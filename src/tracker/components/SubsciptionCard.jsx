@@ -2,7 +2,7 @@ import { Card,Button } from "react-bootstrap";
 
 
 
-function SubscriptionCard({ name, amount, date, category, onDelete }) {
+function SubscriptionCard({ name, amount, date, category, onDelete, onEdit }) {
     return (
         
         <Card
@@ -35,12 +35,12 @@ function SubscriptionCard({ name, amount, date, category, onDelete }) {
           <div style={{textAlign:'right', display: 'flex', 
   justifyContent: 'flex-end',
   gap: '8px' }}>
-            <Button size="sm">Edit</Button>
+            <Button size="sm" onClick = {onEdit}>Edit</Button>
             <Button size="sm" variant="destructive" onClick={onDelete}>Delete</Button>
           </div>
-      
         </Card.Body>
       </Card>
+      
                
           
                 

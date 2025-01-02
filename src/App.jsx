@@ -2,7 +2,7 @@ import Login from './Register/Login.jsx';
 import User from './tracker/user.jsx';
 import {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route, data ,} from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+
 
 function App() {
   const[backendData, setBackEndData] = useState({});
@@ -18,12 +18,11 @@ function App() {
       }
     )
   }), [];
-  //we can't return two components so we use tags
+  //we can't return two components so use tags
   return(
     <>
     
-    
-    
+  
     
       <div style={{
         display: 'flex',

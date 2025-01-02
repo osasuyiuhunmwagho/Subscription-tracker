@@ -29,8 +29,6 @@ const Login = () => {
     const handlesubmit = (e) => {
         //prevents page from refreshing
         e.preventDefault();
-        
-        
 
         const isValid = validator(formData);
         // if fumction is valid sign into homepage
@@ -60,7 +58,7 @@ const Login = () => {
             console.log('VALID PASSWORD!');
         }
         else{
-            newErrors.password = ('passowrd must be  be.....');
+            newErrors.password = ('passowrd must contain ony letters');
         }
 
         setErrors(newErrors);
@@ -69,15 +67,10 @@ const Login = () => {
     }
 
     return (<>
+       <div className="mission"> Our Mission</div>
         <Header/>
         
-        <Container className="d-flex justify-content-center align-items-center h-100" style={{
-            width: "300px", // Adjust the width to make it bigger
-            padding: "30px", // Add padding for content
-            borderRadius: "20px", // Adds rounded corners
-            backgroundColor: "#ffffff", // White box
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", // Subtle shadow
-        }} >
+        <Container className="d-flex justify-content-center align-items-center h-100 container">
             <h2> Sign in </h2>
             
             <Form onSubmit={handlesubmit}>
@@ -87,7 +80,7 @@ const Login = () => {
                 {/* value was necessary in extracting user input */}
                     <Form.Control 
                         className='custom-input' 
-                        type="text" placeholder="Enter username(username must contain only letters and numbers)"
+                        type="text" placeholder="Enter username"
                          name="username" 
                          value ={formData.username}  
                          onChange = {handleChange}
@@ -101,7 +94,7 @@ const Login = () => {
                     
                     <Form.Control className="custom-input" 
                         type="password" 
-                        placeholder="Enter Password(Password must contain more than 5 characters)" 
+                        placeholder="Enter Password" 
                         name="password" 
                         value = {formData.password} 
                         onChange={handleChange}required />
@@ -109,11 +102,12 @@ const Login = () => {
                          {{color: "#B22222"}} >{errors.password}</p>}
                 </Form.Group>
                 <br/>
+                <p className='password-hint'>Password must contain only letters</p>
 
                 <Button className="custom-button" type="submit">Sign Up</Button>
             </Form>
             <div className="mt-3 ">
-                <p>Already have an account? <a href="www.google.com">Log in</a></p>
+                <p>Already have an account? <a href="http://localhost:5173/">Log in</a></p>
                 
             </div>
        

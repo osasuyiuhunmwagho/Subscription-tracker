@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Modal, Button, Form } from "react-bootstrap";
 import './AddSubscription.css';
 
-export default function AddSubscription({ show, handleClose, onSubmit }) {
+export default function AddSubscription({ show, handleClose, onSubmit,initialValues}) {
     const [formData, setFormData] = useState({
         name: '',
         amount: '',
@@ -17,6 +17,20 @@ export default function AddSubscription({ show, handleClose, onSubmit }) {
             [name]: value
         }));
     };
+
+    useEffect(() => {
+        
+        if (show) {
+            // This is using the OR (||) operator for default values
+            //the null is when it is a "add subscription"
+            setFormData(initialValues || {
+                name: '',
+                amount: '',
+                category: '',
+                date: ''
+            });
+        }
+    }, [show, initialValues]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,7 +50,7 @@ export default function AddSubscription({ show, handleClose, onSubmit }) {
             className="subscription-modal"
         >
             <Modal.Header >
-                <Modal.Title>New Subscription</Modal.Title>
+                <Modal.Title>{initialValues ? "Edit Subscription" : "New Subscription"}</Modal.Title>
             </Modal.Header>
             
             <Modal.Body>
@@ -98,7 +112,7 @@ export default function AddSubscription({ show, handleClose, onSubmit }) {
                             Cancel
                         </Button>
                         <Button variant="primary" type="submit">
-                            Add Subscription
+                            {initialValues ? 'Save Changes' : 'Add Subscription'}
                         </Button>
                     </div>
                 </Form>
